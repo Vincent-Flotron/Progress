@@ -1,0 +1,35 @@
+PROCEDURE Print:
+	DEFINE INPUT PARAMETER text AS CHARACTER NO-UNDO.
+	DISPLAY "Here is the message: " + text SKIP.
+END PROCEDURE.
+
+PROCEDURE Cnt:
+    DEFINE INPUT PARAMETER text AS CHARACTER NO-UNDO.
+    DEFINE INPUT PARAMETER letter AS CHARACTER NO-UNDO.
+    DEFINE VARIABLE ln AS INTEGER NO-UNDO INITIAL 0.
+    DO i = 1 TO LENGTH(text):
+        IF SUBSTRING(text, i, 1) = letter:
+            ln = ln + 1.
+        END.
+    END.
+    DISPLAY "ln: " + STRING(ln) SKIP.
+END PROCEDURE.
+
+
+PROCEDURE JohnWick:
+	DEFINE name AS CHARACTER NO-UNDO INITIAL "John Wick".
+	DEFINE i AS INTEGER NO-UNDO INITIAL 1.
+	DO i = 1 TO LENGTH(name):
+		// DISPLAY STRING(i) + ") " + SUBSTRING(name, i, 1) + ", " NO-SKIP.
+		RUN Print(SUBSTRING(name, i, 1)) SKIP.
+	END.
+END PROCEDURE.
+
+PROCEDURE DealWithDoubles:
+    DEFINE INPUT PARAMETER nb1 AS DECIMAL NON-UNDO.
+    DEFINE INPUT PARAMETER nb2 AS DECIMAL NON-UNDO.
+    
+    
+
+RUN Cnt("hello", "o").
+// RUN JohnWick.
