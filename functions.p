@@ -1,3 +1,4 @@
+// 1: with RETURN key word
 FUNCTION Square RETURNS INTEGER (INPUT num AS INTEGER):
     DEFINE VARIABLE result AS INTEGER NO-UNDO.
     ASSIGN result = num * num.
