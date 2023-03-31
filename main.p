@@ -23,3 +23,14 @@ DEFINE VARIABLE myList AS INTEGER[] NO-UNDO.
 myList = [5, 2, 7, 1, 3].
 
 myList = sort(myList).
+
+
+DEFINE VARIABLE num AS INTEGER NO-UNDO INITIAL 0.
+
+DO i=1 TO 10:
+    SET num = num + 1.
+    IF num MOD 2 = 0 THEN
+        DISPLAY "The number is even. Number: " + STRING(num)
+    ELSE
+        DISPLAY "The number is odd. Number: " + STRING(num).
+END.
